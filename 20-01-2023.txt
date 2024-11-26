@@ -1,0 +1,148 @@
+	To work git bash command prompt, right click on the mouse on any where in our system.
+		
+	1] To view all commands	 of git bash use bellow command
+	
+				git help
+				
+	2] To view particular command details then use bellow command
+			syntax: 	git help <commandname>
+			
+			example: 	git help init
+			
+		Once we enter above command one browser will open and display information about that command.
+		
+	init - Create an empty Git repository or reinitialize an existing one
+	
+	If we want to store any file or project in github from our local system folder, we need to create our 
+		folder/location as git folder/location.
+	This location we are calling as git local repository.
+		ex: C:\Users\Ramachandra\Desktop\JRTP\Practice
+	This repository is maintaing only one developer code.
+	
+	To merge all the developers code at one location we required central/remote regpository.
+		ex: https://github.com/thanujakaviti/JRTP
+		
+	3] git init is used make our folder as git repository and able to make communication with central/remote repsoitory
+		form our folder to send or push our files.
+	
+	Create Demo.java
+	================
+		public class Demo{
+		
+		}
+	 Untracked file:
+		The files which are created newly in our git folder are called untracked files.
+		Untracked files are displaying in red colour.
+	 git status
+		above command will display untracked and staged files.
+		
+	 git add Demo.java
+		above command will moving file Demo.java from untracked area to staged area.
+		staged files are displaying green colour.
+	 git status
+	 
+	 create Check.java
+	 =================
+		public class Check{
+		}
+		
+	 create Test.java
+	 ================
+		public class Test{
+		
+		
+		}
+	git status
+		staged area		:	Demo.java
+		untracked area 	: 	Check.java
+							Test.java
+							
+	to move more than one file from untracked are to staged are then we have two different syntax's
+		git add Check.java Test.java
+			[or]
+		git add --a
+	
+	git add Check.java Test.java	
+	git status
+		staged area		:	Demo.java
+							Check.java
+							Test.java
+							
+	git rm --cached Test.java
+		to move the files from staged area to untracked area
+	git status
+		staged area		:	Demo.java
+							Check.java
+		untracked area  :	Test.java
+	git add --a
+	git status
+		staged area		:	Demo.java
+							Check.java
+							Test.java
+							
+	If we want move all the files from staged area to untracked are then use bellow command
+		git rm --cached *
+		git status
+		untracked area	:	Demo.java
+							Check.java
+							Test.java
+	
+	git add --a 
+	git status 
+		staged area		:	Demo.java
+							Check.java
+							Test.java
+	If we want to move few files from staged area to untracked are then use bellow command
+	
+	git rm --cached Check.java Demo.java
+	git status
+		staged area		:   Test.java
+		untracked area	:	Demo.java
+							Check.java
+	git add --a 
+	git status 
+		staged area		:	Demo.java
+							Check.java
+							Test.java				
+	
+	
+	How can we store our staged files into local repository
+		git commit -m 'Intital Commit'
+		
+	If we want to sen files from local repository to remote repository for the first time we need use two commands.
+		git remote add origin https://github.com/thanujakaviti/JRTP.git
+		
+		git push -u origin master
+		git remote add origin https://github.com/thanujakaviti/JRTP.git
+		
+		git push -u origin master
+		
+	note: master is the default branch in git hub.
+	branch is used store our files.
+	***********************************************************
+	git status
+	git add --a
+	git commit -m 'initial commit'
+	git remote add origin htts://github.com/thanujakaviti/JRTP.git
+	git push -u origin master
+	***********************************************************
+	
+	Add some code to Demo.java file
+	public class Demo{
+		public void m1(){
+		}
+	}
+	git status
+	Above file is comes under unstaged area.
+	
+	Create Student.java
+	===================
+	public class Student{
+	
+	}
+	git status
+		unstaged: Demo.java
+		untracked : Student.java
+		
+	git add Student.java
+	git status 
